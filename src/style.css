@@ -1,0 +1,94 @@
+*,
+/*у всех селекторов*/
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    min-height: 100%;
+    background-image: url(../img/background.gif);
+    background-color: rgb(255, 255, 255);
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    font-family: "Fira Sans", sans-serif;
+}
+
+header {
+    background-color: purple;
+    padding: 20px 15px;
+    /* внутренние отступы*/
+}
+
+h1 {
+    text-align: center;
+    color: rgb(255, 255, 255);
+}
+
+footer {
+    background-color: rgb(65, 17, 32);
+    padding: 20px 15px;
+}
+
+.copy-text {
+    color: rgb(255, 255, 255);
+    text-align: center;
+}
+
+.card {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    width: 270px;
+    height: 300px;
+    color: purple;
+    background-color: rgb(217, 177, 243);
+    border: 3px solid purple;
+    transform-style: preserve-3d;
+    border-radius: 15px;
+    transition: 0.5s transform ease-in-out;
+    cursor: pointer;
+}
+
+.card::after {
+    content: "HAPPINESS";
+    color: rgb(255, 255, 255);
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 265px;
+    height: 295px;
+    /*background: radial-gradient(circle,rgba(232, 30, 94, 1) 0%, rgba(222, 98, 137, 1) 49%);*/
+    background-color: blueviolet;
+    background-position: bottom;
+    border-radius: 10px;
+    top: 0;
+    left: 0;
+    position: absolute;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    transform: rotateY(180deg);
+}
+
+.card-show {
+    transform: rotateY(180deg);
+}
+
+.container {
+    display: grid;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    gap: 30px;
+    margin: 50px auto;
+}
